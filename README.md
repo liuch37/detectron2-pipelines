@@ -1,7 +1,7 @@
 # detectron2-pipelines
 Customized pipelines using Detectron2 API.
 
-## installation
+## Installation
 If you are using MacOS:
 ```
 git clone https://github.com/facebookresearch/detectron2.git
