@@ -16,3 +16,5 @@ Else follow the steps in https://github.com/facebookresearch/detectron2/blob/mas
 [1] https://github.com/facebookresearch/detectron2
 
 [2] https://blog.csdn.net/m0_37709262/article/details/102732057
+
+[3] https://towardsdatascience.com/how-to-train-detectron2-on-custom-object-detection-data-be9d1c233e4
