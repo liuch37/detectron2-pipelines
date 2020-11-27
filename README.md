@@ -1,5 +1,5 @@
 # detectron2-pipelines
-Customized training/inference/evaluation pipelines using Detectron2 API developed by Facebook AI Research [1].
+Customized train/inference/evaluation pipelines using Detectron2 API developed by Facebook AI Research [1], supporting customized datasets.
 
 ## Installation
 If you are using MacOS:
