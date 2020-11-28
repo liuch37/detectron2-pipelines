@@ -28,18 +28,24 @@ setup_logger()
 # main function:
 if __name__ == '__main__':
     # image/annotation file paths
+    train_annotation_file = "../datasets/annotations/instances_train2017.json"
     val_annotation_file = "../datasets/annotations/instances_val2017.json"
-    val_image_path = "../datasets/val2017"
+    train_dataset_name = "my_dataset_train"
     val_dataset_name = "my_dataset_val"
+    train_image_path = "../datasets/train2017"
+    val_image_path = "../datasets/val2017"
 
     # register dataset to coco format
     print("Register dataset......")
+    register_coco_instances(train_dataset_name, {}, train_annotation_file, train_image_path)
     register_coco_instances(val_dataset_name, {}, val_annotation_file, val_image_path)
 
     # setup training configuration
     print("Setup configuration......")
     cfg = get_cfg()
     cfg.merge_from_file(model_zoo.get_config_file("COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml"))
+    cfg.DATASETS.TRAIN = (train_dataset_name,)
+    cfg.DATASETS.TEST = (val_dataset_name,)
     cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
     cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.5  # set threshold for this model
     cfg.MODEL.DEVICE = 'cpu' # select either cpu or gpu devices
