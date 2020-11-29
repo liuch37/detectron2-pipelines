@@ -12,6 +12,24 @@ MACOSX_DEPLOYMENT_TARGET=10.X.X CC=clang CXX=clang++ pip install -e .
 ```
 Else follow the steps in https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md
 
+## Command
+Please refer to the configurations inside each code.
+
+Training:
+```
+python train.py
+```
+
+Inference:
+```
+python inference.py
+```
+
+Evaluation:
+```
+python evaluation.py
+```
+
 ## Useful preprocessing tools
 1. Converting PASCAL VOC xml labels to COCO json format [4].
 
