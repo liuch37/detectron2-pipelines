@@ -114,7 +114,7 @@ if __name__ == "__main__":
     cfg.SOLVER.STEPS = [40, ]
     cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = 128
     cfg.MODEL.ROI_HEADS.NUM_CLASSES = 80
-    cfg.MODEL.DEVICE = "cpu"  # select either cpu or gpu devices
+    cfg.MODEL.DEVICE = "cpu"  # select either "cpu" or "cuda"
     cfg.TEST.EVAL_PERIOD = 2
 
     # start training
