@@ -30,6 +30,8 @@ from detectron2.data import (
 from detectron2.data.datasets import register_coco_instances
 import detectron2.utils.comm as comm
 
+import mobilenetv2
+
 setup_logger()
 
 # customized coco trainer to include evalution on testset
@@ -112,7 +114,8 @@ if __name__ == "__main__":
     cfg.SOLVER.BASE_LR = 0.001
     cfg.SOLVER.MAX_ITER = 50
     cfg.SOLVER.STEPS = [40, ]
-    cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = 128
+    cfg.MODEL.BACKBONE.NAME = "build_mnv2_fpn_backbone" # use customized backbone
+    cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = 32
     cfg.MODEL.ROI_HEADS.NUM_CLASSES = 80
     cfg.MODEL.DEVICE = "cpu"  # select either "cpu" or "cuda"
     cfg.TEST.EVAL_PERIOD = 2
